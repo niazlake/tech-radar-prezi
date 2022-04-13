@@ -32,6 +32,8 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { PermissionedRoute } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 
+import jsonData from '../src/api/test.json';
+
 const app = createApp({
   apis,
   bindRoutes({ bind }) {
@@ -71,10 +73,12 @@ const routes = (
     />
     <Route path="/create" element={<ScaffolderPage />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
-    <Route
-      path="/tech-radar"
-      element={<TechRadarPage width={1500} height={800} />}
-    />
+      {jsonData.map((value: any)=>(
+          <Route
+              path={`tech-radar/${value.id}`}
+              element={<TechRadarPage id={value.id} width={1500} height={800} />}
+          />
+      ))}
     <PermissionedRoute
       path="/catalog-import"
       permission={catalogEntityCreatePermission}

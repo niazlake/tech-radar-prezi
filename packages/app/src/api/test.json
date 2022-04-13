@@ -1,0 +1,59 @@
+[{
+  "id": "1",
+  "title": "My Radar",
+  "quadrants": ["Quad1", "Quad2", "Quad3", "Quad4"],
+  "rings": ["adopt", "trial", "assess", "hold"],
+  "blips": [
+    {
+      "name": "JavaScript",
+      "quadrant": "Quad1",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "<p>This is a description</p><p>Formatted into paragraphs</p>"
+    },
+    {
+      "name": "Go",
+      "quadrant": "Quad2",
+      "ring": "trial",
+      "isNew": true,
+      "description": "This is a simple description"
+    },
+    {
+      "name": "Java",
+      "quadrant": "Quad3",
+      "ring": "assess",
+      "isNew": false,
+      "description": "This is a <a href=\"/\">description</a><br /><br />Spanning several lines."
+    },
+    {
+      "name": "C++",
+      "quadrant": "Quad4",
+      "ring": "hold",
+      "isNew": false,
+      "description": "This is another simple description"
+    }
+  ]
+},
+  {
+    "id": "2",
+    "title": "Frontend Gurus",
+    "quadrants": ["React concepts", "Test concepts", "Javascript concepts", "Javascript libraries"],
+    "rings": ["adopt", "trial", "assess", "hold"],
+    "blips": [
+      {
+        "name": "Redux-loop",
+        "quadrant": "React concepts",
+        "ring": "adopt",
+        "isNew": false,
+        "description": "Redux-loop helps us define behaviour and actions in a Elm style."
+      },
+      {
+        "name": "Elm",
+        "quadrant": "Javascript libraries",
+        "ring": "hold",
+        "isNew": true,
+        "description": "Elm is a typed/functional compile-to-javascript alternative."
+      }
+    ]
+  }
+]

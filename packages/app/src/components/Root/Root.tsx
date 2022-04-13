@@ -42,6 +42,7 @@ import {
 } from '@backstage/core-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import jsonData from '../../api/test.json';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -93,7 +94,10 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         {/* End global nav */}
         <SidebarDivider />
         <SidebarScrollWrapper>
-          <SidebarItem icon={MapIcon} to="tech-radar" text="Tech Radar" />
+          {jsonData.map((value)=>(
+                  <SidebarItem icon={MapIcon} to={`tech-radar/${value.id}`} text={value.title} />
+              )
+          )}
         </SidebarScrollWrapper>
       </SidebarGroup>
       <SidebarSpace />

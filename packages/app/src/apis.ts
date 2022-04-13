@@ -8,6 +8,8 @@ import {
   configApiRef,
   createApiFactory,
 } from '@backstage/core-plugin-api';
+import {RadarApi} from "./api/RadarApi";
+import {techRadarApiRef} from "@backstage/plugin-tech-radar";
 
 export const apis: AnyApiFactory[] = [
   createApiFactory({
@@ -15,5 +17,6 @@ export const apis: AnyApiFactory[] = [
     deps: { configApi: configApiRef },
     factory: ({ configApi }) => ScmIntegrationsApi.fromConfig(configApi),
   }),
+  createApiFactory(techRadarApiRef, new RadarApi()),
   ScmAuth.createDefaultApiFactory(),
 ];
